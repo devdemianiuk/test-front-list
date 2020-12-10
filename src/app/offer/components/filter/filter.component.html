@@ -1,0 +1,8 @@
+<mat-form-field appearance="fill">
+  <mat-label>Selected filter:</mat-label>
+  <mat-select (selectionChange)="onSelectChange($event.value)">
+    <mat-option *ngFor="let option of options; trackBy: trackBy" [value]="option.value">
+      {{option.viewValue}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>

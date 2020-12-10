@@ -1,0 +1,22 @@
+<mat-toolbar class="header" color="primary">
+  <div class="common-container header-wrapper">
+    <span>Filter App</span>
+    <span>{{totalResult | async}} items has found</span>
+  </div>
+
+</mat-toolbar>
+
+
+<div class="filter-bar">
+  <div class="filter-wrapper common-container">
+    <app-filter (selectChange)="onFilterChange($event)" [options]="filters"></app-filter>
+    <!-- There can be other filters (desc/asc). Don't have a time-->
+  </div>
+
+</div>
+
+
+<div class="common-container">
+  <app-offers-list [data]="offers | async"></app-offers-list>
+</div>
+

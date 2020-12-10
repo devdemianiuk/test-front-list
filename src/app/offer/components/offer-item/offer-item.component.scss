@@ -1,0 +1,100 @@
+
+.img-logo {
+  background-size: cover;
+}
+
+p {
+  margin: 0;
+}
+
+/* mobile */
+.container {
+  .row {
+    display: grid;
+    grid-auto-rows: minmax(40px, auto);
+
+    grid-template-areas:
+    "a a b b b b cost cost c c"
+    "d d d d d d d d d d";
+
+    .logo-cell {
+      grid-area: a;
+      justify-self: center;
+      grid-column-start: 1;
+      grid-column-end: 3;
+    }
+
+    .caption-cell {
+      grid-area: b;
+      font-size: 1.25rem;
+      align-self: center;
+    }
+
+    .cost-cell {
+      grid-area: cost;
+      font-size: 1.5rem;
+      align-self: center;
+    }
+
+    .more-cell {
+      grid-area: c;
+      justify-self: center;
+      align-self: center;
+      grid-column-start: 9;
+    }
+
+    .download-cell, .upload-cell {
+      display: none;
+    }
+  }
+
+  /* extra row */
+  .extra-cell {
+    display: flex;
+    flex-direction: column;
+    font-size: 1.25rem;
+    padding-left: 30px;
+
+    .extra-description {
+      padding: 1.25rem;
+    }
+  }
+}
+
+/* desktop factor */
+@media (min-width: 950px) {
+  .container {
+    display: flex;
+
+    .row {
+      width: 100%;
+      grid-auto-rows: minmax(40px, auto);
+      grid-template-columns: repeat(8, 1fr);
+      grid-template-areas: "a b b dow dow up up cost";
+
+      .logo-cell {
+        justify-self: start;
+      }
+
+      .download-cell, .upload-cell {
+        display: block;
+      }
+
+      .download-cell {
+        grid-area: dow;
+      }
+
+      .upload-cell {
+        grid-area: up;
+      }
+
+      .more-cell {
+        display: none;
+      }
+    }
+  }
+
+}
+
+
+

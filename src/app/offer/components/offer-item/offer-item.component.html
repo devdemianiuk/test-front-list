@@ -1,0 +1,39 @@
+<mat-card class="container">
+  <div class="row">
+    <div [style.backgroundImage]="'url(' + item.provider.logoUrl + ')'" class="img-logo logo-cell"
+         mat-card-avatar></div>
+
+    <p class="caption-cell">{{item.provider.caption.text}}</p>
+    <p class="cost-cell">{{item.cost.effectiveCost.amount}} {{item.cost.effectiveCost.unit}}</p>
+    <p class="download-cell">{{item.contractTerm.downloadSpeed.amount}} {{item.contractTerm.downloadSpeed.unit}}</p>
+    <p class="upload-cell">{{item.contractTerm.uploadSpeed.amount}} {{item.contractTerm.downloadSpeed.unit}}</p>
+
+    <button (click)="toggleCollapse(!isCollapsed)" class="show-more-btn more-cell" mat-icon-button>
+      <mat-icon *ngIf="isCollapsed">expand_less</mat-icon>
+      <mat-icon *ngIf="!isCollapsed">expand_more</mat-icon>
+    </button>
+  </div>
+
+
+  <div *ngIf="isCollapsed" class="extra-cell">
+    <div class="extra-description">
+      <span>Description:</span>
+      <span> {{item.provider.content.text}}</span>
+    </div>
+
+    <div class="extra-description">
+      <span>Download:</span>
+      <span>{{item.contractTerm.downloadSpeed.amount}}
+        {{item.contractTerm.downloadSpeed.unit}}
+      </span>
+    </div>
+
+    <div class="extra-description">
+      <span>Upload:</span>
+      <span>{{item.contractTerm.uploadSpeed.amount}}
+        {{item.contractTerm.downloadSpeed.unit}}
+      </span>
+    </div>
+  </div>
+
+</mat-card>

@@ -1,0 +1,24 @@
+.common-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.header {
+  margin: 0 auto 2rem auto;
+
+  .header-wrapper {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+  }
+}
+
+
+.filter-bar {
+  margin-bottom: 2rem;
+
+  .filter-wrapper {
+    display: flex;
+    justify-content: flex-end;
+  }
+}
