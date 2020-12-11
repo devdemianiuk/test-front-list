@@ -1,3 +1,8 @@
+# What did need to do
+* list of offers
+* filter this list
+* mobile first approach
+
 # What can be better (I put it here FYI)
 
 * formFactor feature that allows components and services knows about current size and dynamic change the shown component
